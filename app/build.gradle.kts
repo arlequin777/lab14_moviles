@@ -42,6 +42,9 @@ android {
 }
 
 dependencies {
+    implementation ("androidx.glance:glance-appwidget:1.1.0")
+    implementation ("androidx.glance:glance-material3:1.1.0")
+    implementation ("androidx.glance:glance-material:1.1.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -30,6 +30,7 @@ class SimpleWidgetContent : GlanceAppWidget() {
         }
     }
 
+
     @Composable
     private fun MyContent() {
         Column(
@@ -52,11 +53,21 @@ class SimpleWidgetContent : GlanceAppWidget() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Button(
-                    text = "Página Principal",
-                    onClick = actionStartActivity<MainActivity>(),
-                    modifier = GlanceModifier.padding(horizontal = 20.dp)
+                    text = "Home",
+                    onClick = actionStartActivity<MainActivity>()
+                )
+            }
+
+            Row(
+                modifier = GlanceModifier.padding(top = 12.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Button(
+                    text = "Work",
+                    onClick = actionStartActivity<MainActivity>()
                 )
             }
         }
     }
+
 }

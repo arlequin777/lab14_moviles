@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.lab14"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.lab14"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -38,11 +38,15 @@ android {
     }
 
     buildFeatures {
+        viewBinding = true
         compose = true
     }
 
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.3"
+    }
+    androidResources {
+        generateLocaleConfig = false
     }
 }
 
@@ -60,6 +64,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.appcompat)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

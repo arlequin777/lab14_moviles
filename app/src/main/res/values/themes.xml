@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Lab14" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Tema principal de la app, compatible con AppCompat, XML y Glance -->
+    <style name="Theme.Lab14" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/holo_blue_light</item>
+        <item name="colorPrimaryDark">@android:color/holo_blue_dark</item>
+        <item name="colorAccent">@android:color/holo_green_light</item>
+    </style>
+
 </resources>

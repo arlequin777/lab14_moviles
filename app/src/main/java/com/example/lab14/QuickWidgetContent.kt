@@ -3,20 +3,22 @@ package com.example.lab14
 import android.annotation.SuppressLint
 import android.content.Context
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.glance.Button
 import androidx.glance.GlanceModifier
 import androidx.glance.GlanceTheme
+import androidx.glance.action.actionStartActivity
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.provideContent
 import androidx.glance.background
-import androidx.glance.action.actionStartActivity
-import androidx.glance.appwidget.cornerRadius
 import androidx.glance.layout.*
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
+
+// IMPORTAR dp/sp de Compose (LOS CORRECTOS PARA TU VERSION)
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
 
 class QuickWidgetContent : GlanceAppWidget() {
 
@@ -29,7 +31,7 @@ class QuickWidgetContent : GlanceAppWidget() {
     }
 }
 
-@SuppressLint("RestrictedApi", "ResourceType")
+@SuppressLint("ResourceType")
 @Composable
 fun WidgetUI() {
 
@@ -37,14 +39,14 @@ fun WidgetUI() {
         modifier = GlanceModifier
             .fillMaxSize()
             .background(GlanceTheme.colors.background)
-            .cornerRadius(18.dp)
-            .padding(16.dp),
+            .padding(16.dp),   // ← dp de Compose funciona aquí
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         Text(
             text = "Acceso Rápido",
             style = TextStyle(
-                fontSize = 18.sp,
+                fontSize = 18.sp, // ← sp de Compose funciona aquí
                 color = ColorProvider(android.graphics.Color.BLACK)
             ),
             modifier = GlanceModifier.padding(bottom = 12.dp)
@@ -66,7 +68,7 @@ fun WidgetUI() {
 
             Button(
                 text = "Secundaria",
-                onClick = actionStartActivity<SecondActivity>()
+                onClick = actionStartActivity<MainActivity>()
             )
         }
 
@@ -75,7 +77,9 @@ fun WidgetUI() {
         Button(
             text = "Nueva Acción",
             onClick = actionStartActivity<MainActivity>(),
-            modifier = GlanceModifier.fillMaxWidth().padding(horizontal = 10.dp)
+            modifier = GlanceModifier
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp)
         )
     }
 }
